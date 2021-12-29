@@ -10,10 +10,15 @@ for x in $DISTRO
 	OUT=.github/workflows/$x.yml
   echo $x
   echo "name: Build $x Docker
-on: [push]
+on:
+  push:
+    branches: [ "development" ]
+  pull_request:
+    branches: [ "master", "development", "main" ]
+
 jobs:
   build:
-    runs-on: [self-hosted]
+    runs-on: ["self-hosted", "ubuntu-latest"]
     steps:
     - uses: actions/checkout@master
     
