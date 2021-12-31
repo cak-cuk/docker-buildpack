@@ -1,8 +1,6 @@
 # base image
 FROM centos:6
 
-MAINTAINER Mahyuddin Susanto <mahyuddin@wowrack.com>
-
 # Install Packages
 RUN yum update -y \
     && yum install -y --nogpg epel-release \

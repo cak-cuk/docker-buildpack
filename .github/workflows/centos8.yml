@@ -4,8 +4,20 @@ on:
     branches: [ "main", "master" ]
 
 jobs:
-  build:
+  hadolint:
     runs-on: ["self-hosted"]
+    steps:
+    - name: Checkout
+      uses: actions/checkout@master
+
+    - name: Hadolint
+      uses: hadolint/hadolint-action@v1.6.0
+      with:
+        dockerfile: centos8/Dockerfile
+
+  build:q
+    runs-on: ["self-hosted"]
+    needs: ["hadolint"]
     steps:
     - uses: actions/checkout@master
     

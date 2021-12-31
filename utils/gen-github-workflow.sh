@@ -13,18 +13,16 @@ for x in $DISTRO
 on: [\"push\", \"pull_request\"]
 
 jobs:
-  build:
+  hadolint:
     runs-on: [\"self-hosted\"]
-    steps: 
+    steps:
     - name: Checkout
       uses: actions/checkout@master
-      
-    - name: lint
-      uses: luke142367/Docker-Lint-Action@v1.0.0
+    - name: Hadolint
+      uses: hadolint/hadolint-action@v1.6.0
       with:
-        target: $x/Dockerfile
-      env:
-        GITHUB_TOKEN: \${{ secrets.GH_TOKEN }}
+        dockerfile: $x/Dockerfile
+        ignore: \"DL3008\"
 " > $LINT
 
 	OUT=.github/workflows/$x.yml
@@ -34,8 +32,20 @@ on:
     branches: [ \"main\", \"master\" ]
 
 jobs:
-  build:
+  hadolint:
     runs-on: [\"self-hosted\"]
+    steps:
+    - name: Checkout
+      uses: actions/checkout@master
+
+    - name: Hadolint
+      uses: hadolint/hadolint-action@v1.6.0
+      with:
+        dockerfile: $x/Dockerfile
+
+  build:q
+    runs-on: [\"self-hosted\"]
+    needs: [\"hadolint\"]
     steps:
     - uses: actions/checkout@master
     
