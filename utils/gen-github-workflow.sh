@@ -7,28 +7,49 @@ DISTRO="centos7 centos8 trusty xenial bionic focal jessie stretch buster alpine-
 
 for x in $DISTRO
 	do
-	OUT=.github/workflows/$x.yml
+	LINT=.github/workflows/$x-lint.yml
   echo $x
-  echo "name: Build $x Docker
+  echo "name: Check $x Dockerfile
 on:
   push:
-    branches: [ "development" ]
+    branches: [ \"main\", \"master\" ]
   pull_request:
-    branches: [ "master", "development", "main" ]
+    branches: [ \"master\", \"development\", \"main\" ]
 
 jobs:
   build:
-    runs-on: ["self-hosted", "ubuntu-latest"]
+    runs-on: [\"self-hosted\"]
+    steps: 
+    - name: Checkout
+      uses: actions/checkout@master
+      
+    - name: lint
+      uses: luke142367/Docker-Lint-Action@v1.0.0
+      with:
+        target: $x/Dockerfile
+      env:
+        GITHUB_TOKEN: \${{ secrets.GH_TOKEN }}
+" > $LINT
+
+	OUT=.github/workflows/$x.yml
+  echo "name: Build $id docker image
+on:
+  push:
+    branches: [ \"main\", \"master\" ]
+
+jobs:
+  build:
+    runs-on: [\"self-hosted\"]
     steps:
     - uses: actions/checkout@master
     
-    - name: Publish to Registry
+    - name: Build and Publish to Registry
       uses: elgohr/Publish-Docker-Github-Action@master
       with:
         name: udienz/buildpack
         username: \${{ github.actor }}
         password: \${{ secrets.DOCKER_PASSWORD }}
-        dockerfile: focal/Dockerfile
+        dockerfile: $x/Dockerfile
         buildoptions: \"--compress --force-rm\"
         tags: \"$x\"
 " > $OUT

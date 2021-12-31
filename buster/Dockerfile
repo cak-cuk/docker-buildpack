@@ -1,4 +1,4 @@
-FROM udienz/buildpack:buster
+FROM debian:buster
 MAINTAINER Mahyuddin Susanto <udienz@gmail.com>
 
 RUN apt-get update \

@@ -1,4 +1,4 @@
-FROM udienz/buildpack:jessie
+FROM debian:jessie
 MAINTAINER Mahyuddin Susanto <udienz@gmail.com>
 
 RUN apt-get update \

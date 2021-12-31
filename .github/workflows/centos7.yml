@@ -1,23 +1,21 @@
-name: Build centos7 Docker
+name: Build  docker image
 on:
   push:
-    branches: [ development ]
-  pull_request:
-    branches: [ master, development, main ]
+    branches: [ "main", "master" ]
 
 jobs:
   build:
-    runs-on: [self-hosted, ubuntu-latest]
+    runs-on: ["self-hosted"]
     steps:
     - uses: actions/checkout@master
     
-    - name: Publish to Registry
+    - name: Build and Publish to Registry
       uses: elgohr/Publish-Docker-Github-Action@master
       with:
         name: udienz/buildpack
         username: ${{ github.actor }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-        dockerfile: focal/Dockerfile
+        dockerfile: centos7/Dockerfile
         buildoptions: "--compress --force-rm"
         tags: "centos7"
 

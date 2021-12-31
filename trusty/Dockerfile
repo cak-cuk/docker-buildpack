@@ -1,4 +1,4 @@
-FROM udienz/buildpack:trusty
+FROM ubuntu:trusty
 MAINTAINER Mahyuddin Susanto <udienz@gmail.com>
 
 RUN apt-get update \

@@ -1,4 +1,4 @@
-FROM udienz/buildpack:wheezy
+FROM debiana:wheezy
 MAINTAINER Mahyuddin Susanto <udienz@gmail.com>
 
 RUN apt-get update \
