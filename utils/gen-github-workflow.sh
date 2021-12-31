@@ -26,7 +26,7 @@ jobs:
         
   create-pull-request:
     name: create-pull-request
-    needs: compile
+    needs: hadolint
     runs-on: ubuntu-latest
 
     steps:
