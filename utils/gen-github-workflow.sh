@@ -7,10 +7,27 @@ DISTRO="centos7 centos8 trusty xenial bionic focal jessie stretch buster alpine-
 
 for x in $DISTRO
 	do
+	PR=.github/workflows/$x-PR.yml
+  echo "name: Check $x Dockerfile for PR
+on: [\"pull_request\"]
+
+jobs:
+  hadolint:
+    runs-on: [\"self-hosted\"]
+    steps:
+    - name: Checkout
+      uses: actions/checkout@master
+    - name: Hadolint
+      uses: hadolint/hadolint-action@v1.6.0
+      with:
+        dockerfile: $x/Dockerfile
+        ignore: DL3008 DL3007 DL3018 DL3033
+        
+" > $PR
+
 	LINT=.github/workflows/$x-lint.yml
-  echo $x
   echo "name: Check $x Dockerfile
-on: [\"push\", \"pull_request\"]
+on: [\"push\"]
 
 jobs:
   hadolint:

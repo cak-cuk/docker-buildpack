@@ -1,0 +1,16 @@
+name: Check alpine-edge Dockerfile for PR
+on: ["pull_request"]
+
+jobs:
+  hadolint:
+    runs-on: ["self-hosted"]
+    steps:
+    - name: Checkout
+      uses: actions/checkout@master
+    - name: Hadolint
+      uses: hadolint/hadolint-action@v1.6.0
+      with:
+        dockerfile: alpine-edge/Dockerfile
+        ignore: DL3008 DL3007 DL3018 DL3033
+        
+

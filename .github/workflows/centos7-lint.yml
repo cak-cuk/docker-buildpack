@@ -1,5 +1,5 @@
 name: Check centos7 Dockerfile
-on: ["push", "pull_request"]
+on: ["push"]
 
 jobs:
   hadolint:

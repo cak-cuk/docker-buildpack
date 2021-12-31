@@ -1,5 +1,5 @@
 name: Check buster Dockerfile
-on: ["push", "pull_request"]
+on: ["push"]
 
 jobs:
   hadolint:
