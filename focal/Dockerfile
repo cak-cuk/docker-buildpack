@@ -1,5 +1,4 @@
-FROM udienz/buildpack:focal
-MAINTAINER Mahyuddin Susanto <udienz@gmail.com>
+FROM ubuntu:focal
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends  git subversion bzr mercurial cvs sudo build-essential wget \

@@ -1,0 +1,33 @@
+name: Build xenial docker image
+on:
+  push:
+    branches: [ "main", "master" ]
+
+jobs:
+  hadolint:
+    runs-on: ["self-hosted"]
+    steps:
+    - name: Checkout
+      uses: actions/checkout@master
+
+    - name: Hadolint
+      uses: hadolint/hadolint-action@v1.6.0
+      with:
+        dockerfile: xenial/Dockerfile
+
+  build:
+    runs-on: ["self-hosted"]
+    needs: ["hadolint"]
+    steps:
+    - uses: actions/checkout@master
+    
+    - name: Build and Publish to Registry
+      uses: elgohr/Publish-Docker-Github-Action@master
+      with:
+        name: udienz/buildpack
+        username: ${{ github.actor }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        dockerfile: xenial/Dockerfile
+        buildoptions: "--compress --force-rm"
+        tags: "xenial"
+

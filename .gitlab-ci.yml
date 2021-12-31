@@ -37,17 +37,6 @@ build-centos8:
   - docker login -u="$DOCKERUSER" -p="$DOCKERPASS"
   - docker push udienz/buildpack:centos8
 
-build-precise:
- stage: build
- except:
-  refs:
-   - master
- script:
-  - docker build -t buildpack-precise $CI_PROJECT_DIR/precise
-  - docker tag buildpack-precise udienz/buildpack:precise
-  - docker login -u="$DOCKERUSER" -p="$DOCKERPASS"
-  - docker push udienz/buildpack:precise
-
 build-trusty:
  stage: build
  except:

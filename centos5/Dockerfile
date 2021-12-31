@@ -1,6 +1,4 @@
-FROM udienz/buildpack:centos5
-
-MAINTAINER Mahyuddin Susanto <mahyuddin@wowrack.com>
+FROM centos:5
 
 # Install Packages
 RUN yum update -y \

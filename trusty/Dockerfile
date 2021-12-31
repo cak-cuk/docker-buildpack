@@ -1,5 +1,4 @@
-FROM udienz/buildpack:trusty
-MAINTAINER Mahyuddin Susanto <udienz@gmail.com>
+FROM ubuntu:trusty
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends  git subversion bzr mercurial cvs sudo build-essential wget \

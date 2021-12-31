@@ -1,7 +1,5 @@
 # base image
-FROM udienz/buildpack:centos7
-
-MAINTAINER Mahyuddin Susanto <mahyuddin@wowrack.com>
+FROM centos:7
 
 # Install Packages
 RUN yum update -y \

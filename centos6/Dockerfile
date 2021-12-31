@@ -1,7 +1,5 @@
 # base image
-FROM udienz/buildpack:centos6
-
-MAINTAINER Mahyuddin Susanto <mahyuddin@wowrack.com>
+FROM centos:6
 
 # Install Packages
 RUN yum update -y \
