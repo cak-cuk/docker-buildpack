@@ -22,7 +22,7 @@ jobs:
       uses: hadolint/hadolint-action@v1.6.0
       with:
         dockerfile: $x/Dockerfile
-        ignore: \"DL3008, DL3007, DL3018, DL3033\"
+        ignore: DL3008 DL3007 DL3018 DL3033
 " > $LINT
 
 	OUT=.github/workflows/$x.yml
