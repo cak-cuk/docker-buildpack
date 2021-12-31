@@ -40,7 +40,7 @@ jobs:
           destination_branch: \"master\"
           pr_title: \"[DRAFT] pull_request\"
           pr_body: \"PR Request from \${{ github.event_name }} event to \${{ github.ref }}.\"
-          github_token: \${{ secrets.MAHYUDDIN_GH_SECRET }}
+          github_token: \${{ secrets.GH_TOKEN }}
 " > $LINT
 
 	OUT=.github/workflows/$x.yml
