@@ -10,11 +10,7 @@ for x in $DISTRO
 	LINT=.github/workflows/$x-lint.yml
   echo $x
   echo "name: Check $x Dockerfile
-on:
-  push:
-    branches: [ \"main\", \"master\" ]
-  pull_request:
-    branches: [ \"master\", \"development\", \"main\" ]
+on: [\"push\", \"pull_request\"]
 
 jobs:
   build:
@@ -32,7 +28,7 @@ jobs:
 " > $LINT
 
 	OUT=.github/workflows/$x.yml
-  echo "name: Build $id docker image
+  echo "name: Build $x docker image
 on:
   push:
     branches: [ \"main\", \"master\" ]

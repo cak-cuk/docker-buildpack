@@ -1,4 +1,4 @@
-name: Build  docker image
+name: Build buster docker image
 on:
   push:
     branches: [ "main", "master" ]

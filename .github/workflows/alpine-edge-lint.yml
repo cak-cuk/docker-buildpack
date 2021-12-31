@@ -1,9 +1,5 @@
 name: Check alpine-edge Dockerfile
-on:
-  push:
-    branches: [ "main", "master" ]
-  pull_request:
-    branches: [ "master", "development", "main" ]
+on: ["push", "pull_request"]
 
 jobs:
   build:
