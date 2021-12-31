@@ -23,6 +23,24 @@ jobs:
       with:
         dockerfile: $x/Dockerfile
         ignore: DL3008 DL3007 DL3018 DL3033
+        
+  create-pull-request:
+    name: create-pull-request
+    needs: compile
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.3.4
+        
+      - name: Create Pull Request
+        id: open-pr
+        uses: repo-sync/pull-request@v2
+        with:
+          destination_branch: \"master\"
+          pr_title: \"[DRAFT] pull_request\"
+          pr_body: \"PR Request from \${{ github.event_name }} event to \${{ github.ref }}.\"
+          github_token: \${{ secrets.MAHYUDDIN_GH_SECRET }}
 " > $LINT
 
 	OUT=.github/workflows/$x.yml
