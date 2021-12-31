@@ -15,7 +15,7 @@ jobs:
       with:
         dockerfile: buster/Dockerfile
 
-  build:q
+  build:
     runs-on: ["self-hosted"]
     needs: ["hadolint"]
     steps:

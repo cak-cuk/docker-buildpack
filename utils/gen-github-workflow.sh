@@ -43,7 +43,7 @@ jobs:
       with:
         dockerfile: $x/Dockerfile
 
-  build:q
+  build:
     runs-on: [\"self-hosted\"]
     needs: [\"hadolint\"]
     steps:
