@@ -2,6 +2,8 @@ name: Build centos8 docker image
 on:
   push:
     branches: [ "main", "master" ]
+  schedule:
+    - cron: '0 1 */15 * *'
 
 jobs:
   hadolint:
