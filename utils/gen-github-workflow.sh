@@ -81,6 +81,7 @@ jobs:
         dockerfile: $x/Dockerfile
         ignore: DL3008 DL3007 DL3018 DL3033
 
+
   build:
     runs-on: [\"self-hosted\"]
     needs: [\"hadolint\"]
