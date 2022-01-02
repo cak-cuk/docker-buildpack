@@ -40,7 +40,7 @@ jobs:
       with:
         dockerfile: $x/Dockerfile
         ignore: DL3008 DL3007 DL3018 DL3033
-        
+
   create-pull-request:
     name: create-pull-request
     needs: hadolint
@@ -58,6 +58,7 @@ jobs:
           pr_title: \"[DRAFT] pull_request\"
           pr_body: \"PR Request from \${{ github.event_name }} event to \${{ github.ref }}.\"
           github_token: \${{ secrets.GH_TOKEN }}
+
 " > $LINT
 
 	OUT=.github/workflows/$x.yml
@@ -80,7 +81,6 @@ jobs:
       with:
         dockerfile: $x/Dockerfile
         ignore: DL3008 DL3007 DL3018 DL3033
-
 
   build:
     runs-on: [\"self-hosted\"]
