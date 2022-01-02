@@ -1,4 +1,4 @@
-name: Check centos8 Dockerfile
+name: Check bullseye Dockerfile
 on: ["push"]
 
 jobs:
@@ -10,7 +10,7 @@ jobs:
     - name: Hadolint
       uses: hadolint/hadolint-action@v1.6.0
       with:
-        dockerfile: centos8/Dockerfile
+        dockerfile: bullseye/Dockerfile
         ignore: DL3008 DL3007 DL3018 DL3033
 
   create-pull-request:
