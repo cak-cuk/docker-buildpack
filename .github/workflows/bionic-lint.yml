@@ -1,5 +1,8 @@
 name: Check bionic Dockerfile
-on: ["push"]
+on:
+  push:
+    branches-ignore:
+      - "master"
 
 jobs:
   hadolint:

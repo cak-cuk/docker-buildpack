@@ -9,7 +9,10 @@ for x in $DISTRO
 	do
 	PR=.github/workflows/$x-PR.yml
   echo "name: Check $x Dockerfile for PR
-on: [\"pull_request\"]
+on:
+  pull_request:
+    branches-ignore:
+      - \"master\"
 
 jobs:
   hadolint:
@@ -27,7 +30,10 @@ jobs:
 
 	LINT=.github/workflows/$x-lint.yml
   echo "name: Check $x Dockerfile
-on: [\"push\"]
+on:
+  push:
+    branches-ignore:
+      - \"master\"
 
 jobs:
   hadolint:

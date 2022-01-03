@@ -1,5 +1,8 @@
 name: Check trusty Dockerfile
-on: ["push"]
+on:
+  push:
+    branches-ignore:
+      - "master"
 
 jobs:
   hadolint:
