@@ -1,4 +1,4 @@
-FROM debian:bullseye
+FROM udienz/buildpack:bullseye
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends  git subversion bzr mercurial cvs sudo build-essential wget \

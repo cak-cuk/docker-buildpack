@@ -1,5 +1,8 @@
 name: Check centos7 Dockerfile
-on: ["push"]
+on:
+  push:
+    branches-ignore:
+      - "master"
 
 jobs:
   hadolint:

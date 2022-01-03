@@ -1,5 +1,8 @@
 name: Check buster Dockerfile
-on: ["push"]
+on:
+  push:
+    branches-ignore:
+      - "master"
 
 jobs:
   hadolint:

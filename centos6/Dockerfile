@@ -1,5 +1,5 @@
 # base image
-FROM centos:6
+FROM udienz/buildpack:centos6
 
 # Install Packages
 RUN yum update -y \
