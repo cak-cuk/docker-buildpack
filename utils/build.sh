@@ -1,7 +1,7 @@
 #!/bin/bash
 
 BASE=$CI_PROJECT_DIR
-DISTRO="centos7 centos8 trusty xenial bionic focal jessie stretch buster alpine-edge alpine-latest"
+DISTRO="centos7 trusty xenial bionic focal jammy jessie stretch buster alpine-edge alpine-latest"
 OUT=../.gitlab-ci.yml
 
 cat > $OUT <<EOF
