@@ -2,7 +2,7 @@
 
 set -x 
 BASE=$CI_PROJECT_DIR
-DISTRO="centos7 centos8 trusty xenial bionic focal jessie stretch buster alpine-edge alpine-latest bullseye bookworm"
+DISTRO="centos7 trusty xenial bionic focal jammy jessie stretch buster alpine-edge alpine-latest bullseye bookworm"
 # OUT=../.gitlab-ci.yml
 
 for x in $DISTRO
