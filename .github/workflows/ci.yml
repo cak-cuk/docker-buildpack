@@ -72,4 +72,4 @@ jobs:
           file: ${{ matrix.os }}/Dockerfile
           platforms: linux/amd64
           push: true
-          tags: ${{ github.repository }}:latest
+          tags: udienz/docker-buildpack:${{ matrix.os }}
