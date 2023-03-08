@@ -20,7 +20,7 @@ on:
  
 jobs:
   test_and_build:
-    runs-on: [ ubuntu-latest, qemu ]
+    runs-on: [ qemu ]
     name: Code check and build container, no push
     if: github.event_name == 'pull_request'
     strategy:
