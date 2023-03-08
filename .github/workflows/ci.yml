@@ -39,7 +39,7 @@ jobs:
         uses: hadolint/hadolint-action@v1.6.0
         with:
           dockerfile: ${{ matrix.os }}/Dockerfile
-          ignore: SC2086, DL3008, DL3013, DL3002, DL3007, DL3018, DL3033, SC3037, DL3059, SC2039
+          ignore: SC2086, DL3008, DL3013, DL3002, DL3007, DL3018, DL3033, SC3037, DL3059, SC2039, DL3018
 
   build_container:
     name: Build container based on matrix
