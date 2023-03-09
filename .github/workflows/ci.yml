@@ -39,6 +39,7 @@ jobs:
 
   build_container:
     name: Build container based on matrix
+    needs: [ test_and_build ]
     runs-on: [ qemu ]
     if: github.ref == 'refs/heads/main'
     strategy:
