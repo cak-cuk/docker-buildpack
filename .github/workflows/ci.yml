@@ -13,7 +13,7 @@ on:
       - main
     paths:
       - '**/Dockerfile'
- 
+
 jobs:
   test_and_build:
     runs-on: [ self-hosted ]

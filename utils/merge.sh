@@ -47,4 +47,3 @@ if [ ${COUNTBRANCHES} -eq "0" ]; then
 fi
 
 echo "No new merge request opened";
-

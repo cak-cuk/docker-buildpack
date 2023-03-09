@@ -1,4 +1,4 @@
-FROM ubuntu:12.04 
+FROM ubuntu:12.04
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends  git subversion bzr mercurial cvs sudo build-essential wget \

@@ -1,4 +1,4 @@
-FROM debian:9 
+FROM debian:9
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends  git subversion bzr mercurial cvs sudo build-essential wget \
