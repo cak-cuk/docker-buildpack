@@ -73,4 +73,4 @@ jobs:
           platforms: linux/amd64
           push: true
           pull: true
-          tags: udienz/docker-buildpack:${{ matrix.os }}
+          tags: udienz/buildpack:${{ matrix.os }}
