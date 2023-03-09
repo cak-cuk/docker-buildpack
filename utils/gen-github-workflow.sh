@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -x 
+set -x
 BASE=$CI_PROJECT_DIR
 DISTRO="centos7 trusty xenial bionic focal jammy jessie stretch buster alpine-edge alpine-latest bullseye bookworm"
 # OUT=../.gitlab-ci.yml
@@ -25,7 +25,7 @@ jobs:
       with:
         dockerfile: $x/Dockerfile
         ignore: DL3008 DL3007 DL3018 DL3033
-        
+
 " > $PR
 
 	LINT=.github/workflows/$x-lint.yml
@@ -55,7 +55,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2.3.4
-        
+
       - name: Create Pull Request
         id: open-pr
         uses: repo-sync/pull-request@v2
@@ -93,7 +93,7 @@ jobs:
     needs: [\"hadolint\"]
     steps:
     - uses: actions/checkout@master
-    
+
     - name: Build and Publish to Registry
       uses: elgohr/Publish-Docker-Github-Action@master
       with:
