@@ -48,6 +48,33 @@ jobs:
     strategy:
       matrix:
         os: [ centos7, ubuntu1404, ubuntu1604, ubuntu1804, ubuntu2004, ubuntu2204, debian8, debian9, debian10, debian11, debian12, alpine-edge, alpine-latest ]
+        include:
+          - os: centos7
+            codename: centos7.9.2009
+          - os: alpine-latest
+            codename: alpine-3
+          - os: alpine-edge
+            codename: alpine-20230208
+          - os: ubuntu1414
+            codename: trusty
+          - os: ubuntu1604
+            codename: xenial
+          - os: ubuntu1804
+            codename: bionic
+          - os: ubuntu2004
+            codename: focal
+          - os: ubuntu2204
+            codename: jammy
+          - os: debian8
+            codename: jessie
+          - os: debian9
+            codename: stretch
+          - os: debian10
+            codename: buster
+          - os: debian11
+            codename: bullseye
+          - os: debian12
+            codename: bookworm
     steps:
       - uses: AutoModality/action-clean@v1
       - name: Change ownership
@@ -73,4 +100,4 @@ jobs:
           platforms: linux/amd64
           push: true
           pull: true
-          tags: udienz/buildpack:${{ matrix.os }}
+          tags: udienz/buildpack:${{ matrix.os }},udienz/buildpack:{{matrix.codename}}
