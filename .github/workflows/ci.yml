@@ -74,7 +74,7 @@ jobs:
           - os: debian11
             codename: bullseye
           - os: debian12
-            codename: bookworm 
+            codename: bookworm
     steps:
       - uses: AutoModality/action-clean@v1
       - name: Change ownership
