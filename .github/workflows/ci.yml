@@ -53,26 +53,26 @@ jobs:
             codename: centos7.9.2009
           - os: alpine-latest
             codename: alpine-3
-          - os: ubuntu1414
-            codename: trusty
+          - os: ubuntu1404
+            codename: ubuntu-trusty
           - os: ubuntu1604
-            codename: xenial
+            codename: ubuntu-xenial
           - os: ubuntu1804
-            codename: bionic
+            codename: ubuntu-bionic
           - os: ubuntu2004
-            codename: focal
+            codename: ubuntu-focal
           - os: ubuntu2204
-            codename: jammy
+            codename: ubuntu-jammy
           - os: debian8
-            codename: jessie
+            codename: debian-jessie
           - os: debian9
-            codename: stretch
+            codename: debian-stretch
           - os: debian10
-            codename: buster
+            codename: debian-buster
           - os: debian11
-            codename: bullseye
+            codename: debian-bullseye
           - os: debian12
-            codename: bookworm
+            codename: debian-bookworm
     steps:
       - uses: AutoModality/action-clean@v1
       - name: Change ownership
