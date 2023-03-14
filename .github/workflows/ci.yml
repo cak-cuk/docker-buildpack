@@ -42,7 +42,7 @@ jobs:
           ignore: SC2086, DL3008, DL3013, DL3002, DL3007, DL3018, DL3033, SC3037, DL3059, SC2039, DL3018, DL3033
 
   build_container:
-    name: Build container based on matrix
+    name: Build container
     runs-on: [ qemu ]
     if: github.ref == 'refs/heads/main'
     strategy:
@@ -99,7 +99,8 @@ jobs:
           platforms: linux/amd64
           push: true
           pull: true
-          tags: udienz/buildpack:${{ matrix.os }},udienz/buildpack:{{matrix.codename}}
+          tags: udienz/buildpack:${{ matrix.os }}
+
       - name: Build and push image.
         if: ${{ matrix.codename !='' }}
         uses: docker/build-push-action@v4
@@ -109,4 +110,4 @@ jobs:
           platforms: linux/amd64
           push: true
           pull: true
-          tags: udienz/buildpack:${{ matrix.os }}
+          tags: udienz/buildpack:${{ matrix.os }},udienz/buildpack:{{matrix.codename}}
