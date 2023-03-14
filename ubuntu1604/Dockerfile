@@ -1,4 +1,4 @@
-FROM udienz/buildpack:xenial
+FROM ubuntu:14.04
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends  git subversion bzr mercurial cvs sudo build-essential wget \
