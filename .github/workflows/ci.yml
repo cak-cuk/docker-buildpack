@@ -53,7 +53,7 @@ jobs:
             codename: centos7.9.2009
           - os: alpine-latest
             codename: alpine-3
-          - os: ubuntu1414
+          - os: ubuntu1404
             codename: ubuntu-trusty
           - os: ubuntu1604
             codename: ubuntu-xenial
