@@ -100,7 +100,7 @@ jobs:
           push: true
           pull: true
           tags: udienz/buildpack:${{ matrix.os }}
-          
+
       - name: Build and push image.
         if: ${{ matrix.codename !='' }}
         uses: docker/build-push-action@v4
