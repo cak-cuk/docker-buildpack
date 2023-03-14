@@ -21,7 +21,7 @@ on:
 jobs:
   test_and_build:
     runs-on: [ self-hosted ]
-    name: Code check and no push
+    name: Code check
     if: github.event_name == 'pull_request'
     strategy:
       matrix:
