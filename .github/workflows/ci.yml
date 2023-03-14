@@ -53,8 +53,6 @@ jobs:
             codename: centos7.9.2009
           - os: alpine-latest
             codename: alpine-3
-          - os: alpine-edge
-            codename: alpine-20230208
           - os: ubuntu1414
             codename: trusty
           - os: ubuntu1604
@@ -93,6 +91,7 @@ jobs:
           password: ${{ secrets.DOCKER_TOKEN }}
 
       - name: Build and push image.
+        if: ${{ matrix.codename !='' }}
         uses: docker/build-push-action@v4
         with:
           context: ./
@@ -101,3 +100,13 @@ jobs:
           push: true
           pull: true
           tags: udienz/buildpack:${{ matrix.os }},udienz/buildpack:{{matrix.codename}}
+      - name: Build and push image.
+        if: ${{ matrix.codename !='' }}
+        uses: docker/build-push-action@v4
+        with:
+          context: ./
+          file: ${{ matrix.os }}/Dockerfile
+          platforms: linux/amd64
+          push: true
+          pull: true
+          tags: udienz/buildpack:${{ matrix.os }}
