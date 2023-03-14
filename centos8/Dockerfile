@@ -1,5 +1,5 @@
 # base image
-FROM udienz/buildpack:centos8
+FROM centos:8
 
 RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-Linux-* \
  && sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://archive.kernel.org\/centos-vault|g' /etc/yum.repos.d/CentOS-Linux-* \
