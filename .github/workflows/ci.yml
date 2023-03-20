@@ -43,7 +43,7 @@ jobs:
 
   build_container:
     name: Build container
-    runs-on: [ qemu ]
+    runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
     strategy:
       matrix:
