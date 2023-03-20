@@ -20,7 +20,7 @@ on:
 
 jobs:
   test_and_build:
-    runs-on: [ self-hosted ]
+    runs-on: ubuntu-latest
     name: Code check
     if: github.event_name == 'pull_request'
     strategy:
