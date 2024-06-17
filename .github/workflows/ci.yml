@@ -89,7 +89,7 @@ jobs:
 
       - name: Build and push image.
         if: ${{ matrix.codename !='' }}
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: ./
           file: ${{ matrix.os }}/Dockerfile
@@ -100,7 +100,7 @@ jobs:
 
       - name: Build and push image.
         if: ${{ matrix.codename =='' }}
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: ./
           file: ${{ matrix.os }}/Dockerfile
