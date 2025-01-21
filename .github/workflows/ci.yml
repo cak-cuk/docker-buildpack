@@ -26,7 +26,7 @@ jobs:
     if: github.event_name == 'pull_request'
     strategy:
       matrix:
-        os: [ centos6, centos7, centos8, ubuntu1404, ubuntu1604, ubuntu1804, ubuntu2004, ubuntu2204, debian9, debian10, debian11, debian12, alpine-edge, alpine-latest ]
+        os: [ ubuntu1804, ubuntu2004, ubuntu2204, ubuntu2404, debian11, debian12, alpine-edge, alpine-latest ]
     steps:
       - uses: AutoModality/action-clean@v1
       - name: Change ownership
@@ -48,24 +48,18 @@ jobs:
     if: github.ref == 'refs/heads/main'
     strategy:
       matrix:
-        os: [ centos6, centos7, centos8, ubuntu1404, ubuntu1604, ubuntu1804, ubuntu2004, ubuntu2204, debian10, debian11, debian12, alpine-edge, alpine-latest ]
+        os: [ ubuntu1804, ubuntu2004, ubuntu2204, debian11, debian12, alpine-edge, alpine-latest ]
         include:
-          - os: centos7
-            codename: centos7.9.2009
           - os: alpine-latest
             codename: alpine-3
-          - os: ubuntu1404
-            codename: ubuntu-trusty
-          - os: ubuntu1604
-            codename: ubuntu-xenial
           - os: ubuntu1804
             codename: ubuntu-bionic
           - os: ubuntu2004
             codename: ubuntu-focal
           - os: ubuntu2204
             codename: ubuntu-jammy
-          - os: debian10
-            codename: debian-buster
+          - os: ubuntu2404
+            codename: ubuntu-oracular
           - os: debian11
             codename: debian-bullseye
           - os: debian12
