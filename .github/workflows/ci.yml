@@ -48,7 +48,7 @@ jobs:
     if: github.ref == 'refs/heads/main'
     strategy:
       matrix:
-        os: [ ubuntu1804, ubuntu2004, ubuntu2204, debian11, debian12, alpine-edge, alpine-latest ]
+        os: [ ubuntu1804, ubuntu2004, ubuntu2204, ubuntu2404, debian11, debian12, alpine-edge, alpine-latest ]
         include:
           - os: alpine-latest
             codename: alpine-3
@@ -59,7 +59,7 @@ jobs:
           - os: ubuntu2204
             codename: ubuntu-jammy
           - os: ubuntu2404
-            codename: ubuntu-oracular
+            codename: ubuntu-noble
           - os: debian11
             codename: debian-bullseye
           - os: debian12
