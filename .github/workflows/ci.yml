@@ -26,7 +26,7 @@ jobs:
     if: github.event_name == 'pull_request'
     strategy:
       matrix:
-        os: [ ubuntu1804, ubuntu2004, ubuntu2204, ubuntu2404, debian11, debian12, alpine-edge, alpine-latest ]
+        os: [ ubuntu1804, ubuntu2004, ubuntu2204, ubuntu2404, ubuntu2604, debian11, debian12, debian13, alpine-edge, alpine-latest ]
     steps:
       - uses: AutoModality/action-clean@v1
       - name: Change ownership
@@ -34,10 +34,10 @@ jobs:
           sudo chown -R $(whoami):$(whoami) $GITHUB_WORKSPACE
 
       - name: Checkout the codebase
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Hadolint
-        uses: hadolint/hadolint-action@v3.1.0
+        uses: hadolint/hadolint-action@v3.3.0
         with:
           dockerfile: ${{ matrix.os }}/Dockerfile
           ignore: SC2086, DL3008, DL3013, DL3002, DL3007, DL3018, DL3033, SC3037, DL3059, SC2039, DL3018, DL3033
@@ -48,7 +48,7 @@ jobs:
     if: github.ref == 'refs/heads/main'
     strategy:
       matrix:
-        os: [ ubuntu1804, ubuntu2004, ubuntu2204, ubuntu2404, debian11, debian12, alpine-edge, alpine-latest ]
+        os: [ ubuntu1804, ubuntu2004, ubuntu2204, ubuntu2404, ubuntu2604, debian11, debian12, debian13, alpine-edge, alpine-latest ]
         include:
           - os: alpine-latest
             codename: alpine-3
@@ -60,10 +60,14 @@ jobs:
             codename: ubuntu-jammy
           - os: ubuntu2404
             codename: ubuntu-noble
+          - os: ubuntu2604
+            codename: ubuntu-resolute
           - os: debian11
             codename: debian-bullseye
           - os: debian12
             codename: debian-bookworm
+          - os: debian13
+            codename: debian-trixie
     steps:
       - uses: AutoModality/action-clean@v1
       - name: Change ownership
@@ -71,7 +75,7 @@ jobs:
           sudo chown -R $(whoami):$(whoami) $GITHUB_WORKSPACE
 
       - name: Checkout the codebase
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - uses: docker/setup-qemu-action@v3
       - uses: docker/setup-buildx-action@v3
 
