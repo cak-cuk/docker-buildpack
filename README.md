@@ -8,14 +8,17 @@ This is base image, contain common package for builing and version control like:
 cvs, bazaar, git, subversion
 
 ## Avaliable distro:
-- Centos7
-- Ubuntu LTS (14.04, 18.04, 20.04 and 22.04)
-- Debian (Debian 9, 10, 11, and 12)
-- Alpine
+- CentOS (5, 6, 7 and 8)
+- Ubuntu (12.04, 14.04, 16.04, 18.04, 20.04, 22.04, 24.04 and 26.04)
+- Debian (Debian 8, 9, 10, 11, 12 and 13)
+- Alpine (latest and edge)
 
 ### Supported tag and respective `Dockerfile` links
 Here is the tag lists
+ - [`docker-buildpack:centos5`](https://github.com/cak-cuk/docker-buildpack/blob/main/centos5/Dockerfile)
+ - [`docker-buildpack:centos6`](https://github.com/cak-cuk/docker-buildpack/blob/main/centos6/Dockerfile)
  - [`docker-buildpack:centos7`](https://github.com/cak-cuk/docker-buildpack/blob/main/centos7/Dockerfile)
+ - [`docker-buildpack:centos8`](https://github.com/cak-cuk/docker-buildpack/blob/main/centos8/Dockerfile)
  - [`docker-buildpack:alpine-edge`](https://github.com/cak-cuk/docker-buildpack/tree/main/alpine-edge)
  - [`docker-buildpack:alpine-latest`](https://github.com/cak-cuk/docker-buildpack/tree/main/alpine-latest)
  - [`docker-buildpack:debian8`](https://github.com/cak-cuk/docker-buildpack/blob/main/debian8/Dockerfile)
@@ -23,8 +26,12 @@ Here is the tag lists
  - [`docker-buildpack:debian10`](https://github.com/cak-cuk/docker-buildpack/blob/main/debian10/Dockerfile)
  - [`docker-buildpack:debian11`](https://github.com/cak-cuk/docker-buildpack/blob/main/debian11/Dockerfile)
  - [`docker-buildpack:debian12`](https://github.com/cak-cuk/docker-buildpack/blob/main/debian12/Dockerfile)
+ - [`docker-buildpack:debian13`](https://github.com/cak-cuk/docker-buildpack/blob/main/debian13/Dockerfile)
  - [`docker-buildpack:ubuntu1204`](https://github.com/cak-cuk/docker-buildpack/tree/main/ubuntu1204)
  - [`docker-buildpack:ubuntu1404`](https://github.com/cak-cuk/docker-buildpack/tree/main/ubuntu1404)
+ - [`docker-buildpack:ubuntu1604`](https://github.com/cak-cuk/docker-buildpack/tree/main/ubuntu1604)
  - [`docker-buildpack:ubuntu1804`](https://github.com/cak-cuk/docker-buildpack/tree/main/ubuntu1804)
  - [`docker-buildpack:ubuntu2004`](https://github.com/cak-cuk/docker-buildpack/tree/main/ubuntu2004)
  - [`docker-buildpack:ubuntu2204`](https://github.com/cak-cuk/docker-buildpack/tree/main/ubuntu2204)
+ - [`docker-buildpack:ubuntu2404`](https://github.com/cak-cuk/docker-buildpack/tree/main/ubuntu2404)
+ - [`docker-buildpack:ubuntu2604`](https://github.com/cak-cuk/docker-buildpack/tree/main/ubuntu2604)
