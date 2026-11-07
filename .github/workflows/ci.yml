@@ -37,7 +37,7 @@ jobs:
         os: [ ubuntu1804, ubuntu2004, ubuntu2204, ubuntu2404, ubuntu2604, debian11, debian12, debian13, almalinux9, almalinux10, rockylinux9, rockylinux10, alpine-edge, alpine-latest ]
     steps:
       - name: Checkout the codebase
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Hadolint
         uses: hadolint/hadolint-action@v3.3.0
@@ -74,7 +74,7 @@ jobs:
             codename: debian-trixie
     steps:
       - name: Checkout the codebase
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - uses: docker/setup-qemu-action@v3
       - uses: docker/setup-buildx-action@v3
 
