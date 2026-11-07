@@ -34,7 +34,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ ubuntu1804, ubuntu2004, ubuntu2204, ubuntu2404, ubuntu2604, debian11, debian12, debian13, alpine-edge, alpine-latest ]
+        os: [ ubuntu1804, ubuntu2004, ubuntu2204, ubuntu2404, ubuntu2604, debian11, debian12, debian13, almalinux9, almalinux10, rockylinux9, rockylinux10, alpine-edge, alpine-latest ]
     steps:
       - name: Checkout the codebase
         uses: actions/checkout@v6
@@ -52,7 +52,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ ubuntu1804, ubuntu2004, ubuntu2204, ubuntu2404, ubuntu2604, debian11, debian12, debian13, alpine-edge, alpine-latest ]
+        os: [ ubuntu1804, ubuntu2004, ubuntu2204, ubuntu2404, ubuntu2604, debian11, debian12, debian13, almalinux9, almalinux10, rockylinux9, rockylinux10, alpine-edge, alpine-latest ]
         include:
           - os: alpine-latest
             codename: alpine-3

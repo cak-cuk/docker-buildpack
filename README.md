@@ -6,11 +6,13 @@
 
 Base images for building packages. Each image contains a build toolchain and common version control clients:
 git, subversion, bazaar (`bzr`), mercurial, cvs, plus `sudo`, `wget` and `ca-certificates`.
-Alpine uses `build-base`, CentOS uses the "Development Tools" group, Debian and Ubuntu use `build-essential`.
+Alpine uses `build-base`, CentOS, AlmaLinux and Rocky Linux use the "Development Tools" group (`bzr` is not available on AlmaLinux and Rocky Linux), Debian and Ubuntu use `build-essential`.
 
 ## Available distro:
 - Ubuntu (18.04, 20.04, 22.04, 24.04 and 26.04)
 - Debian (11, 12 and 13)
+- AlmaLinux (9 and 10)
+- Rocky Linux (9 and 10)
 - Alpine (latest and edge)
 
 Obsolete (end of life, kept as is, no longer rebuilt by CI): CentOS 8, Debian 8, 9 and 10, Ubuntu 12.04, 14.04 and 16.04.
@@ -29,6 +31,10 @@ Here is the tag lists
  - [`docker-buildpack:centos8`](https://github.com/cak-cuk/docker-buildpack/blob/main/centos8/Dockerfile) (obsolete)
  - [`docker-buildpack:alpine-edge`](https://github.com/cak-cuk/docker-buildpack/tree/main/alpine-edge)
  - [`docker-buildpack:alpine-latest`](https://github.com/cak-cuk/docker-buildpack/tree/main/alpine-latest)
+ - [`docker-buildpack:almalinux9`](https://github.com/cak-cuk/docker-buildpack/blob/main/almalinux9/Dockerfile)
+ - [`docker-buildpack:almalinux10`](https://github.com/cak-cuk/docker-buildpack/blob/main/almalinux10/Dockerfile)
+ - [`docker-buildpack:rockylinux9`](https://github.com/cak-cuk/docker-buildpack/blob/main/rockylinux9/Dockerfile)
+ - [`docker-buildpack:rockylinux10`](https://github.com/cak-cuk/docker-buildpack/blob/main/rockylinux10/Dockerfile)
  - [`docker-buildpack:debian8`](https://github.com/cak-cuk/docker-buildpack/blob/main/debian8/Dockerfile) (obsolete)
  - [`docker-buildpack:debian9`](https://github.com/cak-cuk/docker-buildpack/blob/main/debian9/Dockerfile) (obsolete)
  - [`docker-buildpack:debian10`](https://github.com/cak-cuk/docker-buildpack/blob/main/debian10/Dockerfile) (obsolete)
