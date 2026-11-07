@@ -4,14 +4,23 @@
 [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/cak-cuk/docker-buildpack/main.svg)](https://results.pre-commit.ci/latest/github/cak-cuk/docker-buildpack/main)
  [![CI/CD](https://github.com/cak-cuk/docker-buildpack/actions/workflows/ci.yml/badge.svg)](https://github.com/cak-cuk/docker-buildpack/actions/workflows/ci.yml) [![Docker Stars](https://img.shields.io/docker/stars/udienz/buildpack.svg?maxAge=2592000)](https://hub.docker.com/r/udienz/buildpack/) [![Docker Pulls](https://img.shields.io/docker/pulls/udienz/buildpack.svg?maxAge=2592000)](https://hub.docker.com/r/udienz/buildpack/)
 
-This is base image, contain common package for builing and version control like:
-cvs, bazaar, git, subversion
+Base images for building packages. Each image contains a build toolchain and common version control clients:
+git, subversion, bazaar (`bzr`), mercurial, cvs, plus `sudo`, `wget` and `ca-certificates`.
+Alpine uses `build-base`, CentOS uses the "Development Tools" group, Debian and Ubuntu use `build-essential`.
 
-## Avaliable distro:
+## Available distro:
 - CentOS (5, 6, 7 and 8)
 - Ubuntu (12.04, 14.04, 16.04, 18.04, 20.04, 22.04, 24.04 and 26.04)
 - Debian (Debian 8, 9, 10, 11, 12 and 13)
 - Alpine (latest and edge)
+
+Usage:
+
+```
+docker pull udienz/buildpack:ubuntu2404
+```
+
+Images are published to [Docker Hub](https://hub.docker.com/r/udienz/buildpack/). CI rebuilds and pushes only the distros in the matrix of [`ci.yml`](.github/workflows/ci.yml) (Ubuntu 18.04 and newer, Debian 11 and newer, Alpine) every Sunday and on every push to `main`. Older tags are kept for compatibility and are not rebuilt.
 
 ### Supported tag and respective `Dockerfile` links
 Here is the tag lists
